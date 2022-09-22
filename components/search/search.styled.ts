@@ -1,6 +1,5 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import breakpoints from "../../constants/breakpoints";
-import { keyframes } from "styled-components";
 
 const fadeInAnimation = keyframes`
  0% { opacity: 0 }

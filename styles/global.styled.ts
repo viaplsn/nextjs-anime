@@ -14,10 +14,12 @@ const GlobalStyle = createGlobalStyle`
     --graycloud: #b4b4b4;
     --kellygreen: #20bf12;
   }
+  
   *, *::before, *::after {
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
   }
+  
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -37,28 +39,35 @@ const GlobalStyle = createGlobalStyle`
     font-size: 100%;
     vertical-align: baseline;
   }
+  
   article, aside, details, figcaption, figure,
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
+  
   body {
     line-height: 1;
     min-height: 100vh;
   }
+  
   ol, ul {
     list-style: none;
   }
+  
   blockquote, q {
     quotes: none;
   }
+  
   blockquote:before, blockquote:after,
   q:before, q:after {
     content: '';
   }
+  
   table {
     border-collapse: collapse;
     border-spacing: 0;
   }
+  
   button {
     padding: 0;
     background: transparent;

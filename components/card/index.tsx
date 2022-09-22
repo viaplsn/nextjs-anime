@@ -1,19 +1,23 @@
 import Link from "next/link";
 import { Container, Gradient, Title } from "./card.styled";
 import { StyledImage } from "../../styles/utils.styled";
+import { Anime } from "../../types/AnimeList";
 
 interface CardProps {
-  id: number;
-  image: string;
-  title: string;
+  data: Anime;
 }
 
-const Card = ({ id, image, title }: CardProps): JSX.Element => (
-  <Link href={`anime/${id}`}>
+const Card = ({ data }: CardProps): JSX.Element => (
+  <Link href={`anime/${data.mal_id}`}>
     <Container>
       <Gradient />
-      <StyledImage src={image} layout="fill" objectFit="cover" priority />
-      <Title>{title}</Title>
+      <StyledImage
+        src={data.images.jpg.large_image_url || data.images.webp.large_image_url}
+        layout="fill"
+        objectFit="cover"
+        priority
+      />
+      <Title>{data.title}</Title>
     </Container>
   </Link>
 );

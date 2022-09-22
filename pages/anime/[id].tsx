@@ -50,7 +50,7 @@ const Anime = ({ data }: AnimeProps) => {
           <PreviousPageLink label="Go back to Main" />
           <Data>
             <ImageContainer>
-              <StyledImage src={image} layout="fill" objectFit="cover" priority={true} />
+              <StyledImage src={image} layout="fill" objectFit="cover" priority />
             </ImageContainer>
             <Info>
               <TitleContainer>

@@ -12,7 +12,7 @@ const Card = ({ id, image, title }: CardProps): JSX.Element => (
   <Link href={`anime/${id}`}>
     <Container>
       <Gradient />
-      <StyledImage src={image} layout="fill" objectFit="cover" priority={true} />
+      <StyledImage src={image} layout="fill" objectFit="cover" priority />
       <Title>{title}</Title>
     </Container>
   </Link>

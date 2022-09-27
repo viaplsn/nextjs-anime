@@ -1,6 +1,7 @@
 import Grid from "../grid";
 import Card from "../card";
 import Pagination from "../pagination";
+import useMediaQuery from "../../hooks/useMediaQuery";
 import { Anime, PaginationType } from "../../types/AnimeList";
 
 interface CardsSectionProps {
@@ -8,15 +9,20 @@ interface CardsSectionProps {
   pagination: PaginationType;
 }
 
-const CardsSection = ({ data, pagination }: CardsSectionProps) => (
-  <>
-    <Grid>
-      {data.map((anime) => (
-        <Card key={anime.mal_id} data={anime} />
-      ))}
-    </Grid>
-    <Pagination paginationData={pagination} />
-  </>
-);
+const CardsSection = ({ data, pagination }: CardsSectionProps) => {
+  const isMobileScreenSize = useMediaQuery(480);
+
+  return (
+    <>
+      <Grid>
+        {data.map((anime, index) => {
+          const priority = isMobileScreenSize && index <= 1;
+          return <Card key={anime.mal_id} data={anime} priority={priority} />;
+        })}
+      </Grid>
+      <Pagination paginationData={pagination} />
+    </>
+  );
+};
 
 export default CardsSection;

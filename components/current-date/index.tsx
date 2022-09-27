@@ -1,24 +1,23 @@
 import getDate from "../../utils/getDate";
-import useWindowDimensions from "../../hooks/useWindowDimension";
+import useMediaQuery from "../../hooks/useMediaQuery";
 import { DateText, TodayDate } from "./current-date.styled";
 
 const CurrentDate = (): JSX.Element => {
   const { day, month, shortMonth } = getDate();
-  const { width } = useWindowDimensions();
-  const isDesktopScreenSize = Boolean(width && width > 768);
+  const isTabletScreenSize = useMediaQuery(768);
 
   return (
     <>
-      {isDesktopScreenSize ? (
+      {isTabletScreenSize ? (
+        <DateText>
+          {shortMonth} {day}
+        </DateText>
+      ) : (
         <DateText>
           Today is the{" "}
           <TodayDate>
             {day} of {month}
           </TodayDate>
-        </DateText>
-      ) : (
-        <DateText>
-          {shortMonth} {day}
         </DateText>
       )}
     </>

@@ -5,9 +5,10 @@ import { Anime } from "../../types/AnimeList";
 
 interface CardProps {
   data: Anime;
+  priority: boolean;
 }
 
-const Card = ({ data }: CardProps): JSX.Element => (
+const Card = ({ data, priority }: CardProps): JSX.Element => (
   <Link href={`anime/${data.mal_id}`}>
     <Container>
       <Gradient />
@@ -15,7 +16,7 @@ const Card = ({ data }: CardProps): JSX.Element => (
         src={data.images.jpg.large_image_url || data.images.webp.large_image_url}
         layout="fill"
         objectFit="cover"
-        priority
+        priority={priority}
       />
       <Title>{data.title}</Title>
     </Container>

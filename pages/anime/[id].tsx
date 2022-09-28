@@ -40,42 +40,38 @@ interface AnimeProps {
   data: Anime;
 }
 
-const Anime = ({ data }: AnimeProps) => {
-  const image = data.images.jpg.large_image_url || data.images.webp.large_image_url;
-
-  return (
-    <Box>
-      <Wrapper>
-        <Container>
-          <PreviousPageLink label="Go back to Main" />
-          <Data>
-            <ImageContainer>
-              <StyledImage src={image} layout="fill" objectFit="cover" priority />
-            </ImageContainer>
-            <Info>
-              <TitleContainer>
-                <MainTitle>{data.title}</MainTitle>
-                {data.approved && <CheckCircle />}
-              </TitleContainer>
-              <Details>
-                {data.type && <InfoRow label="Type" value={data.type} />}
-                {data.source && <InfoRow label="Source" value={data.source} />}
-                {data.episodes && <InfoRow label="Episodes" value={data.episodes} />}
-                {data.status && <InfoRow label="Status" value={data.status} />}
-              </Details>
-              <Ratings score={data.score} rank={data.rank} popularity={data.popularity} />
-            </Info>
-          </Data>
-          {data.synopsis && (
-            <Text>
-              <Title>Description</Title>
-              <Description>{data.synopsis}</Description>
-            </Text>
-          )}
-        </Container>
-      </Wrapper>
-    </Box>
-  );
-};
+const Anime = ({ data }: AnimeProps) => (
+  <Box>
+    <Wrapper>
+      <Container>
+        <PreviousPageLink label="Go back to Main" />
+        <Data>
+          <ImageContainer>
+            <StyledImage src={data.images.webp.image_url} layout="fill" objectFit="cover" priority />
+          </ImageContainer>
+          <Info>
+            <TitleContainer>
+              <MainTitle>{data.title}</MainTitle>
+              {data.approved && <CheckCircle />}
+            </TitleContainer>
+            <Details>
+              {data.type && <InfoRow label="Type" value={data.type} />}
+              {data.source && <InfoRow label="Source" value={data.source} />}
+              {data.episodes && <InfoRow label="Episodes" value={data.episodes} />}
+              {data.status && <InfoRow label="Status" value={data.status} />}
+            </Details>
+            <Ratings score={data.score} rank={data.rank} popularity={data.popularity} />
+          </Info>
+        </Data>
+        {data.synopsis && (
+          <Text>
+            <Title>Description</Title>
+            <Description>{data.synopsis}</Description>
+          </Text>
+        )}
+      </Container>
+    </Wrapper>
+  </Box>
+);
 
 export default Anime;

@@ -10,7 +10,7 @@ const Footer = (): JSX.Element => (
           <Title>Your name</Title>
           <Text>A few words about how you found Coinable and how did you feel about this task :)</Text>
         </TextContainer>
-        <Button onClick={scrollToTheTop}>
+        <Button onClick={scrollToTheTop} aria-label="Scroll to the top button">
           <Chevron />
         </Button>
       </Container>

@@ -22,11 +22,11 @@ const Pagination = ({ paginationData }: PaginationProps): JSX.Element => {
 
   return (
     <Container>
-      <StyledButton disabled={page === 1} onClick={handlePreviousPageClick}>
+      <StyledButton disabled={page === 1} onClick={handlePreviousPageClick} aria-label="Previous page button">
         <ArrowLeft />
       </StyledButton>
       <PageNumber>{page}</PageNumber>
-      <StyledButton disabled={!hasNextPage} onClick={handleNextPageClick}>
+      <StyledButton disabled={!hasNextPage} onClick={handleNextPageClick} aria-label="Next page button">
         <ArrowRight />
       </StyledButton>
     </Container>

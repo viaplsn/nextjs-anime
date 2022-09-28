@@ -35,7 +35,7 @@ const Text = styled.p`
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 500;
-  color: var(--gray);
+  color: var(--carbongray);
 `;
 
 const Chevron = styled(ChevronUp)`

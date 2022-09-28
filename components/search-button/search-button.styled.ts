@@ -10,12 +10,12 @@ const Button = styled.button`
   align-items: center;
   border: 1px solid transparent;
   border-radius: 30px;
-  background-color: var(--seashell);
+  background-color: var(--brightgray);
   transition: all 0.3s linear;
   &:hover {
     transform: scale(0.95);
     cursor: pointer;
-    border-color: var(--ashgray);
+    border-color: var(--black);
   }
 
   @media (max-width: ${breakpoints.md}) {
@@ -33,13 +33,13 @@ const SearchIcon = styled(Search)`
   width: 1.125rem;
   height: 1.125rem;
   margin-right: 0.5rem;
-  color: var(--ashgray);
+  color: var(--black);
 `;
 
 const Label = styled.span`
   font-size: 0.875rem;
   line-height: 1.125rem;
-  color: var(--ashgray);
+  color: var(--black);
 `;
 
 export { Button, SearchIcon, Label };

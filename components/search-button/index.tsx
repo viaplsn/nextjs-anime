@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import SearchModal from "../search-modal";
+import dynamic from "next/dynamic";
 import { Button, SearchIcon, Label } from "./search-button.styled";
 
 const SearchButton = (): JSX.Element => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const SearchModal = dynamic(() => import("../search-modal"), {
+    ssr: false,
+  });
 
   return (
     <>

@@ -17,7 +17,7 @@ const CardsSection = ({ data, pagination }: CardsSectionProps) => {
       <Grid>
         {data.map((anime, index) => {
           const priority = isMobileScreenSize ? index <= 1 : true;
-          return <Card key={anime.mal_id} data={anime} priority={priority} isMobileScreenSize={isMobileScreenSize} />;
+          return <Card key={anime.mal_id} data={anime} priority={priority} />;
         })}
       </Grid>
       <Pagination paginationData={pagination} />
